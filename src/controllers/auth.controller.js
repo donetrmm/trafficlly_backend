@@ -7,7 +7,6 @@ const jwtSecret = process.env.JWT_SECRET;
 const login = async (req, res) => {
     try {
         const { correo, password } = req.body;
-
         const usuarioEncontrado = await prisma.usuarios.findUnique({
             where: {
                 correo: correo
