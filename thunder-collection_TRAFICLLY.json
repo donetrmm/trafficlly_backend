@@ -1,0 +1,201 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "TRAFICLLY",
+    "collectionId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+    "dateExported": "2024-07-02T03:39:00.010Z",
+    "version": "1.2",
+    "folders": [
+        {
+            "_id": "8cec7648-a661-4605-94fe-d44bbac5914e",
+            "name": "AUTH",
+            "containerId": "",
+            "created": "2024-07-02T02:56:26.020Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "2ff81398-2ace-4df5-a312-0def01735ff8",
+            "name": "USUARIOS",
+            "containerId": "",
+            "created": "2024-07-02T02:57:58.615Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "8ad16f82-9bd3-42fb-8f2d-e28f64df8204",
+            "name": "KITS",
+            "containerId": "",
+            "created": "2024-07-02T03:11:14.032Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "62233181-fe1e-4dd1-a0a7-54f11220e08a",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "8cec7648-a661-4605-94fe-d44bbac5914e",
+            "name": "Login",
+            "url": "http://localhost:4000/auth/login",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-07-02T02:56:36.552Z",
+            "modified": "2024-07-02T03:25:06.295Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\": \"juan.perez@example.com\",\n  \"password\": \"brandi12\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "66a8e707-a601-440f-b3e1-7f9b3fd1106c",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "2ff81398-2ace-4df5-a312-0def01735ff8",
+            "name": "CREATE",
+            "url": "http://localhost:4000/usuarios",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-07-02T02:58:08.496Z",
+            "modified": "2024-07-02T02:59:24.119Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"telefono\": \"1234567190\",\n  \"nombres\": \"Juan\",\n  \"apellidos\": \"Pérez\",\n  \"correo\": \"juan.2@example.com\",\n  \"password\": \"securepassword\",\n  \"domicilio\": \"123 Calle Falsa\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "98142302-b885-4507-b1bf-731a598f432d",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "2ff81398-2ace-4df5-a312-0def01735ff8",
+            "name": "DELETE",
+            "url": "http://localhost:4000/usuarios/juan.2@example.com",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-07-02T02:59:43.300Z",
+            "modified": "2024-07-02T03:08:28.385Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5MjA0LCJleHAiOjE3MTk5MTgwMDR9.9KiCc4Kyg2Jlt2idcxh61mD6DYbzL-jsRwyYXP1AbEM"
+                }
+            ]
+        },
+        {
+            "_id": "c61a0498-367c-4eba-8ef6-f32d592ccd5e",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "2ff81398-2ace-4df5-a312-0def01735ff8",
+            "name": "UPDATE",
+            "url": "http://localhost:4000/usuarios/juan.perez@example.com",
+            "method": "PUT",
+            "sortNum": 50000,
+            "created": "2024-07-02T03:09:13.117Z",
+            "modified": "2024-07-02T03:10:48.058Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5MjA0LCJleHAiOjE3MTk5MTgwMDR9.9KiCc4Kyg2Jlt2idcxh61mD6DYbzL-jsRwyYXP1AbEM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"password\": \"brandi12\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "b19124e7-f3de-4a99-ae94-c7943d77ce76",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "8ad16f82-9bd3-42fb-8f2d-e28f64df8204",
+            "name": "CREATE",
+            "url": "http://localhost:4000/kits",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-07-02T03:11:22.726Z",
+            "modified": "2024-07-02T03:19:20.682Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5ODYxLCJleHAiOjE3MTk5MTg2NjF9.mndIceoXMm9djiPyIRGYzBNkihlfzykZ1qsB7RvHeNY"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Negocio Example\",\n  \"idPropietario\": \"1234567190\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "15aee0a6-bfee-4e57-bc6d-60d58e1081e2",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "8ad16f82-9bd3-42fb-8f2d-e28f64df8204",
+            "name": "GET BY ID",
+            "url": "http://localhost:4000/kits/1",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-07-02T03:13:54.926Z",
+            "modified": "2024-07-02T03:14:14.705Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5ODYxLCJleHAiOjE3MTk5MTg2NjF9.mndIceoXMm9djiPyIRGYzBNkihlfzykZ1qsB7RvHeNY"
+                }
+            ]
+        },
+        {
+            "_id": "89be958a-b13b-4232-8e4c-8228a787b41b",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "8ad16f82-9bd3-42fb-8f2d-e28f64df8204",
+            "name": "GET BY PROPIETARIO",
+            "url": "http://localhost:4000/kits/usuario/unique",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-07-02T03:14:35.481Z",
+            "modified": "2024-07-02T03:18:29.691Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5ODYxLCJleHAiOjE3MTk5MTg2NjF9.mndIceoXMm9djiPyIRGYzBNkihlfzykZ1qsB7RvHeNY"
+                }
+            ]
+        },
+        {
+            "_id": "858e0f1a-2934-4e6b-a3f1-5c314422a66a",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "8ad16f82-9bd3-42fb-8f2d-e28f64df8204",
+            "name": "UPDATE",
+            "url": "http://localhost:4000/kits/2",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2024-07-02T03:24:00.063Z",
+            "modified": "2024-07-02T03:25:23.897Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODkwNzA2LCJleHAiOjE3MTk5MTk1MDZ9.d2T8XI7jowgxMrgQ48HHeSOzRkItdY-AWH2OAwuQjpM"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\": \"Negocio Updated\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "3e6bb43d-361e-471e-bf58-f1d6600a0605",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "8ad16f82-9bd3-42fb-8f2d-e28f64df8204",
+            "name": "DELETE",
+            "url": "http://localhost:4000/kits/4",
+            "method": "DELETE",
+            "sortNum": 100000,
+            "created": "2024-07-02T03:30:27.166Z",
+            "modified": "2024-07-02T03:31:11.774Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODkwNzA2LCJleHAiOjE3MTk5MTk1MDZ9.d2T8XI7jowgxMrgQ48HHeSOzRkItdY-AWH2OAwuQjpM"
+                }
+            ]
+        }
+    ],
+    "ref": "gskx-YLnJH_aR0MKJF0s-gwg7gDhNmTi0WWoBL0Rcz2kXjRDghPQ7fJx6_B9gF9w_unOxVTeTuL7MmHIYo85-A"
+}
