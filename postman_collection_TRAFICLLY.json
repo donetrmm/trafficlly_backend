@@ -1,0 +1,271 @@
+{
+    "info": {
+        "name": "TRAFICLLY",
+        "_postman_id": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "AUTH",
+            "item": [
+                {
+                    "name": "Login",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/auth/login",
+                            "host": [
+                                "http://localhost:4000/auth/login"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"correo\": \"juan.perez@example.com\",\n  \"password\": \"brandi12\"\n}"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "USUARIOS",
+            "item": [
+                {
+                    "name": "CREATE",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/usuarios",
+                            "host": [
+                                "http://localhost:4000/usuarios"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"telefono\": \"1234567190\",\n  \"nombres\": \"Juan\",\n  \"apellidos\": \"P\u00e9rez\",\n  \"correo\": \"juan.2@example.com\",\n  \"password\": \"securepassword\",\n  \"domicilio\": \"123 Calle Falsa\"\n}"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "name": "Authorization",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5MjA0LCJleHAiOjE3MTk5MTgwMDR9.9KiCc4Kyg2Jlt2idcxh61mD6DYbzL-jsRwyYXP1AbEM"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:4000/usuarios/juan.2@example.com",
+                            "host": [
+                                "http://localhost:4000/usuarios/juan.2@example.com"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "UPDATE",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "name": "Authorization",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5MjA0LCJleHAiOjE3MTk5MTgwMDR9.9KiCc4Kyg2Jlt2idcxh61mD6DYbzL-jsRwyYXP1AbEM"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:4000/usuarios/juan.perez@example.com",
+                            "host": [
+                                "http://localhost:4000/usuarios/juan.perez@example.com"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"password\": \"brandi12\"\n}"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "KITS",
+            "item": [
+                {
+                    "name": "CREATE",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "name": "Authorization",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5ODYxLCJleHAiOjE3MTk5MTg2NjF9.mndIceoXMm9djiPyIRGYzBNkihlfzykZ1qsB7RvHeNY"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:4000/kits",
+                            "host": [
+                                "http://localhost:4000/kits"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"nombre\": \"Negocio Example\",\n  \"idPropietario\": \"1234567190\"\n}"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET BY ID",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "name": "Authorization",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5ODYxLCJleHAiOjE3MTk5MTg2NjF9.mndIceoXMm9djiPyIRGYzBNkihlfzykZ1qsB7RvHeNY"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:4000/kits/1",
+                            "host": [
+                                "http://localhost:4000/kits/1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET BY PROPIETARIO",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "name": "Authorization",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODg5ODYxLCJleHAiOjE3MTk5MTg2NjF9.mndIceoXMm9djiPyIRGYzBNkihlfzykZ1qsB7RvHeNY"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:4000/kits/usuario/unique",
+                            "host": [
+                                "http://localhost:4000/kits/usuario/unique"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "UPDATE",
+                    "request": {
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "name": "Authorization",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODkwNzA2LCJleHAiOjE3MTk5MTk1MDZ9.d2T8XI7jowgxMrgQ48HHeSOzRkItdY-AWH2OAwuQjpM"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:4000/kits/2",
+                            "host": [
+                                "http://localhost:4000/kits/2"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"nombre\": \"Negocio Updated\"\n}"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "name": "Authorization",
+                                "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODkwNzA2LCJleHAiOjE3MTk5MTk1MDZ9.d2T8XI7jowgxMrgQ48HHeSOzRkItdY-AWH2OAwuQjpM"
+                            }
+                        ],
+                        "url": {
+                            "raw": "http://localhost:4000/kits/4",
+                            "host": [
+                                "http://localhost:4000/kits/4"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "REGISTRO PERSONAS",
+            "item": [
+                {
+                    "name": "CREATE",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/registro",
+                            "host": [
+                                "http://localhost:4000/registro"
+                            ]
+                        },
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n  \"fecha\": \"2024-07-02\",\n  \"hora\": \"10:00\",\n  \"numero_personas\": 10,\n  \"lugar\": \"adentro\",\n  \"idKit\": 1\n}"
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DELETE",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/registro/3",
+                            "host": [
+                                "http://localhost:4000/registro/3"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET POR FECHA Y LUGAR",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/registro?fecha=2024-07-02&lugar=adentro&idKit=1",
+                            "host": [
+                                "http://localhost:4000/registro?fecha=2024-07-02&lugar=adentro&idKit=1"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "GET NUMERO DE PERSONAS POR FECHA Y LUGAR",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:4000/registro/suma?fecha=2024-07-01&lugar=adentro&idKit=1",
+                            "host": [
+                                "http://localhost:4000/registro/suma?fecha=2024-07-01&lugar=adentro&idKit=1"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
