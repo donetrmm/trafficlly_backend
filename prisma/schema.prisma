@@ -34,8 +34,8 @@ model Kit_traffic {
 }
 
 model Registro_personas {
-  id              String        @id
-  fecha           DateTime      @default(now())
+  id              Int        @id @default(autoincrement())
+  fecha           String      
   hora            String        
   numero_personas Int  
   lugar           String

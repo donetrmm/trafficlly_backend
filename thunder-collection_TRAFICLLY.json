@@ -2,7 +2,7 @@
     "clientName": "Thunder Client",
     "collectionName": "TRAFICLLY",
     "collectionId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
-    "dateExported": "2024-07-02T03:39:00.010Z",
+    "dateExported": "2024-07-02T04:45:34.163Z",
     "version": "1.2",
     "folders": [
         {
@@ -25,6 +25,13 @@
             "containerId": "",
             "created": "2024-07-02T03:11:14.032Z",
             "sortNum": 30000
+        },
+        {
+            "_id": "eabcd4b2-4cdc-4e82-8881-3f88e3933578",
+            "name": "REGISTRO PERSONAS",
+            "containerId": "",
+            "created": "2024-07-02T04:17:21.992Z",
+            "sortNum": 40000
         }
     ],
     "requests": [
@@ -195,7 +202,94 @@
                     "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImNvcnJlbyI6Imp1YW4ucGVyZXpAZXhhbXBsZS5jb20iLCJ0ZWxlZm9ubyI6IjEyMzQ1Njc4OTAifSwiaWF0IjoxNzE5ODkwNzA2LCJleHAiOjE3MTk5MTk1MDZ9.d2T8XI7jowgxMrgQ48HHeSOzRkItdY-AWH2OAwuQjpM"
                 }
             ]
+        },
+        {
+            "_id": "5cd190e4-d050-4c8c-b17c-e94b4a644cec",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "eabcd4b2-4cdc-4e82-8881-3f88e3933578",
+            "name": "CREATE",
+            "url": "http://localhost:4000/registro",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-07-02T04:17:28.422Z",
+            "modified": "2024-07-02T04:37:54.013Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"fecha\": \"2024-07-02\",\n  \"hora\": \"10:00\",\n  \"numero_personas\": 10,\n  \"lugar\": \"adentro\",\n  \"idKit\": 1\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "934275d5-ae31-40c7-91a8-ffcf5144adb4",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "eabcd4b2-4cdc-4e82-8881-3f88e3933578",
+            "name": "DELETE",
+            "url": "http://localhost:4000/registro/3",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2024-07-02T04:22:07.573Z",
+            "modified": "2024-07-02T04:36:59.228Z",
+            "headers": []
+        },
+        {
+            "_id": "0be1ef7b-7bd6-4967-9d48-1bc6c7989386",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "eabcd4b2-4cdc-4e82-8881-3f88e3933578",
+            "name": "GET POR FECHA Y LUGAR",
+            "url": "http://localhost:4000/registro?fecha=2024-07-02&lugar=adentro&idKit=1",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-07-02T04:23:09.798Z",
+            "modified": "2024-07-02T04:38:05.074Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "fecha",
+                    "value": "2024-07-02",
+                    "isPath": false
+                },
+                {
+                    "name": "lugar",
+                    "value": "adentro",
+                    "isPath": false
+                },
+                {
+                    "name": "idKit",
+                    "value": "1",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "3f0df40e-e6bc-4a02-8bb8-37b486475b3c",
+            "colId": "99f265e2-cafa-4779-ba1d-610eb7eff522",
+            "containerId": "eabcd4b2-4cdc-4e82-8881-3f88e3933578",
+            "name": "GET NUMERO DE PERSONAS POR FECHA Y LUGAR",
+            "url": "http://localhost:4000/registro/suma?fecha=2024-07-01&lugar=adentro&idKit=1",
+            "method": "GET",
+            "sortNum": 140000,
+            "created": "2024-07-02T04:38:33.760Z",
+            "modified": "2024-07-02T04:40:11.129Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "fecha",
+                    "value": "2024-07-01",
+                    "isPath": false
+                },
+                {
+                    "name": "lugar",
+                    "value": "adentro",
+                    "isPath": false
+                },
+                {
+                    "name": "idKit",
+                    "value": "1",
+                    "isPath": false
+                }
+            ]
         }
     ],
-    "ref": "gskx-YLnJH_aR0MKJF0s-gwg7gDhNmTi0WWoBL0Rcz2kXjRDghPQ7fJx6_B9gF9w_unOxVTeTuL7MmHIYo85-A"
+    "ref": "gskx-YLnJH_aR0MKJF0s-gGz2itArwd2029IKF-ArU-LWNCVi4_voxKtauQtvQLPk2qlZZlipSB3EtcXRV7z9g"
 }
