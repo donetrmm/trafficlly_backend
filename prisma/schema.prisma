@@ -1,0 +1,62 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Usuarios {
+  telefono      String    @id
+  nombres       String
+  apellidos     String
+  correo        String    @unique
+  password      String
+  domicilio     String
+  kit_traffic   Kit_traffic[]
+}
+
+model Kit_traffic {
+  id                  Int           @id @default(autoincrement())
+  nombre              String
+  usuario             Usuarios      @relation(fields: [idPropietario], references: [telefono])
+  idPropietario       String     
+  personas            Registro_personas[]
+  probabilidades      Probabilidad[]
+  concurrencia        Concurrencia[]
+}
+
+model Registro_personas {
+  id              String        @id
+  fecha           DateTime      @default(now())
+  hora            String        
+  numero_personas Int  
+  lugar           String
+  kit             Kit_traffic   @relation(fields: [idKit], references: [id])
+  idKit           Int
+}
+
+model Probabilidad {
+  fecha       DateTime        @id @default(now())
+  dia         String
+  kit         Kit_traffic   @relation(fields: [idKit], references: [id])
+  idKit       Int
+}
+
+model Concurrencia {
+  id              String        @id
+  fecha           DateTime      @default(now())
+  hora            String
+  dia             String        
+  numero_personas Int  
+  lugar           String
+  kit             Kit_traffic   @relation(fields: [idKit], references: [id])
+  idKit           Int
+}
