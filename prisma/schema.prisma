@@ -44,15 +44,14 @@ model Registro_personas {
 }
 
 model Probabilidad {
-  fecha       DateTime        @id @default(now())
+  fecha       String        @id
   dia         String
   kit         Kit_traffic   @relation(fields: [idKit], references: [id])
   idKit       Int
 }
 
 model Concurrencia {
-  id              String        @id
-  fecha           DateTime      @default(now())
+  fecha           String        @id
   hora            String
   dia             String        
   numero_personas Int  

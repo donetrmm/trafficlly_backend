@@ -10,6 +10,8 @@ import authRouter from './src/routes/auth.routes.js';
 import usuariosRouter from './src/routes/usuarios.routes.js';
 import kitsRouter from './src/routes/kits.routes.js'
 import registroRouter from './src/routes/registroPersonas.routes.js';
+import probabilidadRouter from './src/routes/probabilidad.routes.js';
+import concurrenciaRouter from './src/routes/concurrencia.routes.js';
 
 app.use(cors({
   origin: 'http://localhost:5173',
@@ -23,6 +25,8 @@ app.use('/auth', authRouter);
 app.use('/usuarios', usuariosRouter);
 app.use('/kits', kitsRouter);
 app.use('/registro', registroRouter);
+app.use('/probabilidades', probabilidadRouter);
+app.use('/concurrencias', concurrenciaRouter);
 
 
 const PORT = process.env.PORT || 3000; 
