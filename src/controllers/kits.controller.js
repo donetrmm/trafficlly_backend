@@ -31,11 +31,12 @@ const getKitsByUser = async (req, res) => {
 };
 
 const createKit = async (req, res) => {
-  const { nombre } = req.body;
+  const { id, nombre } = req.body;
   const idPropietario = req.usuario.telefono;
   try {
     const newKit = await prisma.kit_traffic.create({
       data: {
+        id: parseInt(id),
         nombre,
         idPropietario
       }
