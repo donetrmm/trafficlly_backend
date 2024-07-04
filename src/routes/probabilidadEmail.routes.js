@@ -1,8 +1,8 @@
 import express from 'express';
-import { sendWeeklyReport } from '../controllers/scheduledTaskController';
+import { sendWeeklyReport } from '../controllers/probabilidadEmail.controller.js';
 
 const router = express.Router();
 
-router.post('/send-weekly-report', sendWeeklyReport);
+router.post('/probabilidad', sendWeeklyReport);
 
 export default router;
