@@ -60,8 +60,27 @@ const deleteUser = async (req, res) => {
   }
 };
 
+const getIDCorreo = async (req, res) => {
+  const telefono = req.usuario.telefono;
+  try {
+    const existingUser = await prisma.usuarios.findUnique({ where: { telefono } });
+    if (!existingUser) {
+      return res.status(404).json({ error: 'Usuario no encontrado' });
+    }
+
+    res.json({ 
+      message: 'Usuario encontrado.',
+      correo: existingUser.correo,
+      telefono: existingUser.telefono
+     });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
+
 export default {
   createUser,
   updateUser,
   deleteUser,
+  getIDCorreo
 };
