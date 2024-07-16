@@ -11,7 +11,7 @@ const createRegistro = async (req, res) => {
         hora,
         numero_personas,
         lugar,
-        idKit
+        idKit: parseInt(idKit)
       }
     });
     res.status(201).json(newRegistro);
