@@ -7,26 +7,35 @@ const generateRandomNumber = (min, max) => {
 };
 
 const seedData = async () => {
-  const date = '2024-06-27';
+  const startDate = new Date('2024-07-05'); // Fecha de inicio del rango
+  const endDate = new Date('2024-07-14');   // Fecha de fin del rango
   const locations = ['adentro', 'afuera'];
 
-  for (let hour = 0; hour < 24; hour++) {
-    const hourString = hour.toString().padStart(2, '0') + ':00';
-    
-    for (const location of locations) {
-      const numPersons = generateRandomNumber(1, 10); 
-      const kitId = 987;
+  const currentDate = new Date(startDate);
+  
+  while (currentDate <= endDate) {
+    const date = currentDate.toISOString().split('T')[0]; // Formato YYYY-MM-DD
 
-      await prisma.registro_personas.create({
-        data: {
-          fecha: date,
-          hora: hourString,
-          numero_personas: numPersons,
-          lugar: location,
-          idKit: kitId,
-        },
-      });
+    for (let hour = 0; hour < 24; hour++) {
+      const hourString = hour.toString().padStart(2, '0') + ':00';
+      
+      for (const location of locations) {
+        const numPersons = generateRandomNumber(1, 10); 
+        const kitId = 12345;
+
+        await prisma.registro_personas.create({
+          data: {
+            fecha: date,
+            hora: hourString,
+            numero_personas: numPersons,
+            lugar: location,
+            idKit: kitId,
+          },
+        });
+      }
     }
+
+    currentDate.setDate(currentDate.getDate() + 1); // Avanzar al siguiente día
   }
 };
 
