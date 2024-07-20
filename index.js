@@ -36,14 +36,14 @@ app.use('/email', probabilidadEmailRouter);
 app.use('/weekly/concurrencia', weeklyConcurrenciaRouter);
 
 cron.schedule('0 0 * * SUN', () => {
-  fetch('http://localhost:4000/email/probabilidad', {
+  fetch('https://trafficllymain.zapto.org/email/probabilidad', {
     method: 'POST'
   })
     .then((res) => res.json())
     .then((data) => console.log(data))
     .catch((error) => console.error('Error al enviar el reporte semanal:', error))
 
-    fetch('http://localhost:4000/weekly/concurrencia', {
+    fetch('https://trafficllymain.zapto.org/weekly/concurrencia', {
       method: 'POST'
     })
       .then((res) => res.json())
