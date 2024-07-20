@@ -75,18 +75,16 @@ const getSumOfPeopleByLastWeek = async (req, res) => {
 
   try {
     const today = new Date();
-    const dayOfWeek = today.getDay(); // 0 (Sunday) to 6 (Saturday)
+    const dayOfWeek = today.getDay(); 
 
-    // Ajustar las fechas para obtener el lunes y el domingo de la semana pasada
     const lastMonday = new Date(today);
-    lastMonday.setDate(today.getDate() - dayOfWeek - 6); // Set to the last Monday
-    lastMonday.setHours(0, 0, 0, 0); // Set to start of the day
+    lastMonday.setDate(today.getDate() - dayOfWeek - 6); 
+    lastMonday.setHours(0, 0, 0, 0); 
 
     const lastSunday = new Date(lastMonday);
-    lastSunday.setDate(lastMonday.getDate() + 6); // Set to the last Sunday
-    lastSunday.setHours(23, 59, 59, 999); // Set to end of the day
+    lastSunday.setDate(lastMonday.getDate() + 6); 
+    lastSunday.setHours(23, 59, 59, 999); 
 
-    // Formatear las fechas en AAAA-MM-DD
     const formatDateString = (date) => date.toISOString().split('T')[0];
 
     const formattedLastMonday = formatDateString(lastMonday);
@@ -111,8 +109,8 @@ const getSumOfPeopleByLastWeek = async (req, res) => {
     const weekData = new Array(7).fill(0);
 
     registros.forEach((registro) => {
-      const day = new Date(registro.fecha).getDay(); // 0 (Sunday) to 6 (Saturday)
-      const dayIndex = (day === 0 ? 6 : day - 1); // Ajustar para que el domingo sea el último día de la semana
+      const day = new Date(registro.fecha).getDay(); 
+      const dayIndex = (day === 0 ? 6 : day - 1); 
       weekData[dayIndex] += registro.numero_personas;
     });
 

@@ -7,8 +7,8 @@ const generateRandomNumber = (min, max) => {
 };
 
 const seedData = async () => {
-  const startDate = new Date('2024-07-05'); // Fecha de inicio del rango
-  const endDate = new Date('2024-07-14');   // Fecha de fin del rango
+  const startDate = new Date('2024-07-07'); // Fecha de inicio del rango
+  const endDate = new Date('2024-07-17');   // Fecha de fin del rango
   const locations = ['adentro', 'afuera'];
 
   const currentDate = new Date(startDate);

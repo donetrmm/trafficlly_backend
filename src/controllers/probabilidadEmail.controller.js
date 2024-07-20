@@ -70,7 +70,7 @@ const sendWeeklyReport = async (req, res) => {
       }
 
       const weeklyData = await getWeeklyData(kit.id);
-      const apiEndpoint = 'http://0.0.0.0:8000/max_traffic_day/';
+      const apiEndpoint = 'https://probabilidad.zapto.org/max_traffic_day/';
 
       const response = await axios.post(apiEndpoint, {
         week1: weeklyData.week1,
