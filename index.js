@@ -18,7 +18,7 @@ import probabilidadEmailRouter from './src/routes/probabilidadEmail.routes.js';
 import weeklyConcurrenciaRouter from './src/routes/weeklyConcurencia.routes.js';
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization'],
