@@ -7,6 +7,7 @@ CREATE TABLE `Usuarios` (
     `password` VARCHAR(191) NOT NULL,
     `domicilio` VARCHAR(191) NOT NULL,
 
+    UNIQUE INDEX `Usuarios_correo_key`(`correo`),
     PRIMARY KEY (`telefono`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -21,8 +22,8 @@ CREATE TABLE `Kit_traffic` (
 
 -- CreateTable
 CREATE TABLE `Registro_personas` (
-    `id` VARCHAR(191) NOT NULL,
-    `fecha` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `fecha` VARCHAR(191) NOT NULL,
     `hora` VARCHAR(191) NOT NULL,
     `numero_personas` INTEGER NOT NULL,
     `lugar` VARCHAR(191) NOT NULL,
@@ -33,7 +34,7 @@ CREATE TABLE `Registro_personas` (
 
 -- CreateTable
 CREATE TABLE `Probabilidad` (
-    `fecha` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `fecha` VARCHAR(191) NOT NULL,
     `dia` VARCHAR(191) NOT NULL,
     `idKit` INTEGER NOT NULL,
 
@@ -42,15 +43,14 @@ CREATE TABLE `Probabilidad` (
 
 -- CreateTable
 CREATE TABLE `Concurrencia` (
-    `id` VARCHAR(191) NOT NULL,
-    `fecha` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `fecha` VARCHAR(191) NOT NULL,
     `hora` VARCHAR(191) NOT NULL,
     `dia` VARCHAR(191) NOT NULL,
     `numero_personas` INTEGER NOT NULL,
     `lugar` VARCHAR(191) NOT NULL,
     `idKit` INTEGER NOT NULL,
 
-    PRIMARY KEY (`id`)
+    PRIMARY KEY (`fecha`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
