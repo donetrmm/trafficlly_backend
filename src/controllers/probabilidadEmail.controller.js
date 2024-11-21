@@ -70,7 +70,7 @@ const sendWeeklyReport = async (req, res) => {
       }
 
       const weeklyData = await getWeeklyData(kit.id);
-      const apiEndpoint = 'https://probabilidad.zapto.org/max_traffic_day/';
+      const apiEndpoint = 'http://35.153.187.88/max_traffic_day/';
 
       const response = await axios.post(apiEndpoint, {
         week1: weeklyData.week1,
@@ -88,14 +88,21 @@ const sendWeeklyReport = async (req, res) => {
       
 
       const emailContent = `
-        <h1>Día de mayor probabilidad:</h1>
-        <p>${response.data.day}</p>
-      `;
+      <div style="font-family: Arial, sans-serif; line-height: 1.5; color: #333;">
+        <h1 style="color: #0056b3; font-size: 24px;">Notificación: Día de Mayor Probabilidad</h1>
+        <p style="font-size: 16px;">Estimado usuario,</p>
+        <p style="font-size: 16px;">El día con mayor probabilidad es:</p>
+        <p style="font-size: 18px; font-weight: bold; color: #d9534f;">${response.data.day}</p>
+        <p style="font-size: 16px;">Gracias por usar nuestro servicio.</p>
+        <p style="font-size: 16px;">Atentamente,</p>
+        <p style="font-size: 16px; font-weight: bold;">El equipo de Trafficlly</p>
+      </div>
+    `;    
 
       await sendEmail({
         from: process.env.GMAIL_USER,
         to: usuario.correo,
-        subject: 'Probabilidad del día con mayor trafico peatonal',
+        subject: 'TRAFFICLLY: Día de Mayor Probabilidad de Tránsito',
         html: emailContent
       });
     }

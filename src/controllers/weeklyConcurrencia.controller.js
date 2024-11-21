@@ -50,7 +50,7 @@ const getPreviousWeekData = async (kitId) => {
 const sendDataAndSaveResponse = async (req, res) => {
   try {
     const kits = await prisma.kit_traffic.findMany();
-    const apiEndpoint = 'https://concurrencia.zapto.org/trafico'; 
+    const apiEndpoint = 'http://54.144.101.60/trafico'; 
 
     for (const kit of kits) {
       const weeklyData = await getPreviousWeekData(kit.id);

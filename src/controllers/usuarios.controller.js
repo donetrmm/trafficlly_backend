@@ -24,6 +24,7 @@ const createUser = async (req, res) => {
 const updateUser = async (req, res) => {
   const { correo } = req.params;
   const { password } = req.body;
+  console.log(req.body);
   try {
     const existingUser = await prisma.usuarios.findUnique({ where: { correo } });
     if (!existingUser) {
